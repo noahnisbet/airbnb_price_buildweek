@@ -18,7 +18,7 @@ column1 = dbc.Col(
         
             ## Air BnB Price Predictor
 
-            This app will help owners choose a resonable price for your AirBnB.
+            This app will help owners choose a resonable price for their AirBnB.
 
             """
         ),
