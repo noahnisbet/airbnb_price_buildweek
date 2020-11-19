@@ -4,17 +4,10 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-from pg_database import connect_to_pg, execute_query
 
 # Imports from this application
 from app import app, server
 from pages import index, predictions
-
-pg_dbname = "oiepsull"
-pg_user = "oiepsull"
-pg_password = "VMih3Xv8nbiPZVp7k7dY1cnSMg6wcfJN"
-pg_host = "lallah.db.elephantsql.com"
-check_table_exist = "SELECT * FROM price_prediction"
 
 # Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
@@ -72,11 +65,6 @@ def display_page(pathname):
         return index.layout
     elif pathname == '/predictions':
         return predictions.layout
-    elif pathname == '/prediction':
-        sl_conn, pg_conn = connect_to_pg(pg_dbname, pg_user, pg_password, pg_host)
-        sl_curs = sl_conn.cursor()
-        pg_curs = pg_conn.cursor() 
-        return execute_query(pg_curs, check_table_exist)
     else:
         return dcc.Markdown('## Page not found')
 
