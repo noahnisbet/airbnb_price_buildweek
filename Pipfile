@@ -15,7 +15,6 @@ sklearn = "*"
 numpy = "*"
 category-encoders = "*"
 psycopg2-binary = "*"
-keras = "*"
 tensorflow = "*"
 
 [requires]

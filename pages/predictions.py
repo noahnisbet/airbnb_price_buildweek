@@ -6,8 +6,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import pandas as pd
 from test import get_inputs
-from keras.models import load_model
-import keras
+from tensorflow.keras.models import load_model
+import tensorflow.keras
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -310,7 +310,6 @@ def update_output_div(latitude, city, property_type,room_type,
         return ['Predicted Price of AirBnB: ${}'.format(round(number, 2))]
     else:
         return [['Predicted Price of AirBnB:']]
-
 
 
 
