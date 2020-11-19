@@ -306,8 +306,8 @@ def update_output_div(latitude, city, property_type,room_type,
 
 
         prediction = result.predict([df_for_prediction])[len(result.predict([df_for_prediction]))-1]
-        
-        return ['Predicted Price of AirBnB: ${}'.format(round(((prediction[0])[0]))) + '0']
+        number = float(((prediction[0])[0]))
+        return ['Predicted Price of AirBnB: ${}'.format(round(number, 2))]
     else:
         return [['Predicted Price of AirBnB:']]
 
