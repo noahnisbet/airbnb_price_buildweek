@@ -16,6 +16,7 @@ numpy = "*"
 category-encoders = "*"
 psycopg2-binary = "*"
 keras = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3"
